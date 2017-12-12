@@ -36,7 +36,7 @@ class VonNeumannEncoder: ExtractAlgorithm {
 
   // 1-bit encoder can take 8 bytes of imput, since its only 2^8 values
   // 8-bit encoder can take 1 byte of imput since it uses every bit
-  // Other values are calculated to keep memory footprint around 10-20mb
+  // Other values are calculated to keep memory footprint around 1-2mb
   static let byteDepthPerBits = [ 8, 8, 8, 6, 5, 4, 3, 2, 1]
 
   init(max_bits:Int = 2) {
