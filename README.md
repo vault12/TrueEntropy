@@ -28,13 +28,13 @@ Use your phone's camera as a high volume thermal entropy generator - creates gen
 
 <img src="https://i.imgur.com/6860cMn.gif" align="right">
 
-**TrueEntropy** uses your phone's camera to generate true random numbers derived from thermal noise. The camera in your smartphone is so advanced that it can detect even the smallest variations produced by fundamental particle physics. We capture thermal variations in every pixel of your phone's camera to create a powerful, high volume entropy random number generator. No need to move your phone - even if your phone is resting on a desktop, it is able to pick up a sufficient quantity of thermal variations to generate random numbers at a rate of 18Mb per minute.
+**TrueEntropy** uses your phone's camera to generate true random numbers derived from thermal noise. The camera in your smartphone is so advanced that it can detect even the smallest variations produced by fundamental particle physics. We capture thermal variations in every pixel of your phone's camera to create a powerful, high volume entropy random number generator. No need to move your phone! Leave your phone stationary, and TrueEntropy will pick up a sufficient quantity of thermal variations to generate random numbers at a rate of 18Mb per minute.
 
 * Generate binary files for local use via AirDrop
 * Send entropy to a destination machine via cryptographic relays
 * Continuous generation mode to constantly reseed target machines
 
-Read full technical notes about *TrueEntropy* on [Medium](https://medium.com/vault12).
+Read [full research notes](https://medium.com/vault12/how-to-get-true-randomness-from-your-apple-device-with-particle-physics-and-thermal-entropy-a9d47ca80c9b) about *TrueEntropy*.
 
 ## Features
 
