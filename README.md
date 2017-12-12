@@ -34,7 +34,7 @@ Use your phone's camera as a high volume thermal entropy generator - creates gen
 * Send entropy to a destination machine via cryptographic relays
 * Continuous generation mode to constantly reseed target machines
 
-Learn more in our article on [Medium](https://medium.com/@vault12).
+Read full technical notes about *TrueEntropy* on [Medium](https://medium.com/vault12).
 
 ## Features
 
