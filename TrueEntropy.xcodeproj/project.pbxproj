@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E9BD589098B47F8D63DD1FD /* Pods_TrueEntropy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1939721B5D17098D4230D78E /* Pods_TrueEntropy.framework */; };
+		A535B07E1F789716002F15A5 /* VonNeumannEnc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535B07D1F789716002F15A5 /* VonNeumannEnc.swift */; };
+		A540BC551C8AB44B000D62EC /* CameraFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A540BC541C8AB44B000D62EC /* CameraFrames.swift */; };
+		A549EE931F94523C00E031B4 /* BuildPi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549EE921F94523C00E031B4 /* BuildPi.swift */; };
+		A54CF5601F93292500F4B61D /* OneBitExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CF55F1F93292500F4B61D /* OneBitExtractor.swift */; };
+		A57CA8321FD25D3000D1AA8D /* GlowUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57CA8311FD25D3000D1AA8D /* GlowUtils.swift */; };
+		A58014731F6E518A0062FB0C /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58014721F6E518A0062FB0C /* Frame.swift */; };
+		A58014741F6E5C710062FB0C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A540BC461C8AAE43000D62EC /* AVFoundation.framework */; };
+		A58014751F6E5C790062FB0C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A540BC4A1C8AAE60000D62EC /* CoreVideo.framework */; };
+		A5907DD81F89BDFE0017BC5E /* Collector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5907DD71F89BDFE0017BC5E /* Collector.swift */; };
+		A5AB7D391F97328600D45222 /* GlowLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB7D381F97328600D45222 /* GlowLite.swift */; };
+		A5B570EE1F6F5CAA001AA7E1 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B570ED1F6F5CAA001AA7E1 /* Sample.swift */; };
+		A5CBBF201C8A83FC00693175 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CBBF1F1C8A83FC00693175 /* AppDelegate.swift */; };
+		A5CBBF221C8A83FC00693175 /* GenerationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CBBF211C8A83FC00693175 /* GenerationController.swift */; };
+		A5CBBF251C8A83FC00693175 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CBBF231C8A83FC00693175 /* Main.storyboard */; };
+		A5CBBF281C8A83FC00693175 /* TrueEntropy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5CBBF261C8A83FC00693175 /* TrueEntropy.xcdatamodeld */; };
+		A5CBBF2A1C8A83FC00693175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CBBF291C8A83FC00693175 /* Assets.xcassets */; };
+		A5CBBF2D1C8A83FC00693175 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CBBF2B1C8A83FC00693175 /* LaunchScreen.storyboard */; };
+		A5EDFE171F861F01003ECDED /* Extractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EDFE161F861F01003ECDED /* Extractor.swift */; };
+		A5EFD59B1F9876DE002E35A3 /* libsodium-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EFD59A1F9876DE002E35A3 /* libsodium-ios.a */; };
+		B4371867963E475262CFD59C /* Pods_TrueEntropy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC5F99896DCBC8D003E3F9F /* Pods_TrueEntropy.framework */; };
+		FA1B76001F7D7FA2008CA324 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		FA30234B1F97813800EEFB63 /* AdvancedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30234A1F97813800EEFB63 /* AdvancedController.swift */; };
+		FA418FCE1F97EC6D005305F0 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA418FCD1F97EC6D005305F0 /* bg.jpg */; };
+		FA46270E1F84DD3500EE3A3F /* scale.png in Resources */ = {isa = PBXBuildFile; fileRef = FA46270D1F84DD3500EE3A3F /* scale.png */; };
+		FA71C2981FAB754D009216E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71C2971FAB754D009216E7 /* Constants.swift */; };
+		FA7A67A31F9E059000AE3E3B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7A67A21F9E059000AE3E3B /* logo.png */; };
+		FAA31D541F94AECC007DACF0 /* vault12.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA31D501F94ADF6007DACF0 /* vault12.png */; };
+		FAA31D551F94AECE007DACF0 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA31D521F94ADF6007DACF0 /* splash.png */; };
+		FAA31D5A1F94AF84007DACF0 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA31D591F94AF84007DACF0 /* SettingsController.swift */; };
+		FAA31D641F94C629007DACF0 /* settings_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA31D611F94C60E007DACF0 /* settings_icon1.png */; };
+		FAA31D651F94C62B007DACF0 /* settings_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA31D621F94C60E007DACF0 /* settings_icon2.png */; };
+		FAA31D661F94C62F007DACF0 /* settings_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA31D631F94C60E007DACF0 /* settings_icon3.png */; };
+		FAA31D681F94C69D007DACF0 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA31D671F94C69A007DACF0 /* OpenSans-Regular.ttf */; };
+		FAC5889E1F84F85100C3BC99 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAC5889D1F84F79600C3BC99 /* OpenSans-Light.ttf */; };
+		FAC5889F1F84F85300C3BC99 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAC5889C1F84F79600C3BC99 /* OpenSans-ExtraBold.ttf */; };
+		FAED52311F965E4C0087DC3C /* camera_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAED52301F965E490087DC3C /* camera_bg.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0DB91E649D75DB1E245BDE56 /* Pods-TrueEntropy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueEntropy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy.debug.xcconfig"; sourceTree = "<group>"; };
+		1939721B5D17098D4230D78E /* Pods_TrueEntropy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrueEntropy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC5F99896DCBC8D003E3F9F /* Pods_TrueEntropy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrueEntropy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BC65322FBC87EA0F34C024E /* Pods-TrueEntropy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueEntropy.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy.release.xcconfig"; sourceTree = "<group>"; };
+		9F39A8A192879F38A472BCD5 /* Pods-TrueEntropy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueEntropy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy.debug.xcconfig"; sourceTree = "<group>"; };
+		A535B07D1F789716002F15A5 /* VonNeumannEnc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VonNeumannEnc.swift; sourceTree = "<group>"; };
+		A540BC461C8AAE43000D62EC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A540BC481C8AAE57000D62EC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A540BC4A1C8AAE60000D62EC /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A540BC4E1C8AB1F3000D62EC /* TrueEntropy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrueEntropy-Bridging-Header.h"; sourceTree = "<group>"; };
+		A540BC541C8AB44B000D62EC /* CameraFrames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraFrames.swift; sourceTree = "<group>"; };
+		A549EE921F94523C00E031B4 /* BuildPi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildPi.swift; sourceTree = "<group>"; };
+		A54CF55F1F93292500F4B61D /* OneBitExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneBitExtractor.swift; sourceTree = "<group>"; };
+		A57CA8311FD25D3000D1AA8D /* GlowUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010GlowUtils.swift"; sourceTree = "<group>"; };
+		A58014721F6E518A0062FB0C /* Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		A5907DD71F89BDFE0017BC5E /* Collector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collector.swift; sourceTree = "<group>"; };
+		A5AB7D381F97328600D45222 /* GlowLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowLite.swift; sourceTree = "<group>"; };
+		A5B570ED1F6F5CAA001AA7E1 /* Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
+		A5CBBF1C1C8A83FC00693175 /* TrueEntropy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueEntropy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5CBBF1F1C8A83FC00693175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A5CBBF211C8A83FC00693175 /* GenerationController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = GenerationController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		A5CBBF241C8A83FC00693175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5CBBF271C8A83FC00693175 /* TrueEntropy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrueEntropy.xcdatamodel; sourceTree = "<group>"; };
+		A5CBBF291C8A83FC00693175 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5CBBF2C1C8A83FC00693175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5CBBF2E1C8A83FC00693175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5EDFE161F861F01003ECDED /* Extractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extractor.swift; sourceTree = "<group>"; };
+		A5EFD59A1F9876DE002E35A3 /* libsodium-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsodium-ios.a"; path = "Pods/Sodium/Sodium/libsodium/libsodium-ios.a"; sourceTree = "<group>"; };
+		AE2D9C412443A817CB350869 /* Pods-TrueEntropy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueEntropy.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy.release.xcconfig"; sourceTree = "<group>"; };
+		FA30234A1F97813800EEFB63 /* AdvancedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedController.swift; sourceTree = "<group>"; };
+		FA418FCD1F97EC6D005305F0 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		FA46270D1F84DD3500EE3A3F /* scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scale.png; sourceTree = "<group>"; };
+		FA71C2971FAB754D009216E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FA7A67A21F9E059000AE3E3B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		FAA31D501F94ADF6007DACF0 /* vault12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vault12.png; sourceTree = "<group>"; };
+		FAA31D521F94ADF6007DACF0 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		FAA31D591F94AF84007DACF0 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		FAA31D611F94C60E007DACF0 /* settings_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_icon1.png; sourceTree = "<group>"; };
+		FAA31D621F94C60E007DACF0 /* settings_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_icon2.png; sourceTree = "<group>"; };
+		FAA31D631F94C60E007DACF0 /* settings_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_icon3.png; sourceTree = "<group>"; };
+		FAA31D671F94C69A007DACF0 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		FAC5889C1F84F79600C3BC99 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FAC5889D1F84F79600C3BC99 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		FAED52301F965E490087DC3C /* camera_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera_bg.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A5CBBF191C8A83FC00693175 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5EFD59B1F9876DE002E35A3 /* libsodium-ios.a in Frameworks */,
+				A58014751F6E5C790062FB0C /* CoreVideo.framework in Frameworks */,
+				A58014741F6E5C710062FB0C /* AVFoundation.framework in Frameworks */,
+				B4371867963E475262CFD59C /* Pods_TrueEntropy.framework in Frameworks */,
+				1E9BD589098B47F8D63DD1FD /* Pods_TrueEntropy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C977B2F719C387C32A71207 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F39A8A192879F38A472BCD5 /* Pods-TrueEntropy.debug.xcconfig */,
+				7BC65322FBC87EA0F34C024E /* Pods-TrueEntropy.release.xcconfig */,
+				0DB91E649D75DB1E245BDE56 /* Pods-TrueEntropy.debug.xcconfig */,
+				AE2D9C412443A817CB350869 /* Pods-TrueEntropy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A5AB7D3A1F9740A500D45222 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5EFD59A1F9876DE002E35A3 /* libsodium-ios.a */,
+				3FC5F99896DCBC8D003E3F9F /* Pods_TrueEntropy.framework */,
+				1939721B5D17098D4230D78E /* Pods_TrueEntropy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5CBBF131C8A83FC00693175 = {
+			isa = PBXGroup;
+			children = (
+				A540BC4A1C8AAE60000D62EC /* CoreVideo.framework */,
+				A540BC481C8AAE57000D62EC /* CoreMedia.framework */,
+				A540BC461C8AAE43000D62EC /* AVFoundation.framework */,
+				A5CBBF1E1C8A83FC00693175 /* TrueEntropy */,
+				A5CBBF1D1C8A83FC00693175 /* Products */,
+				A5AB7D3A1F9740A500D45222 /* Frameworks */,
+				A540BC4E1C8AB1F3000D62EC /* TrueEntropy-Bridging-Header.h */,
+				8C977B2F719C387C32A71207 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		A5CBBF1D1C8A83FC00693175 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5CBBF1C1C8A83FC00693175 /* TrueEntropy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5CBBF1E1C8A83FC00693175 /* TrueEntropy */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B4C881F90FC8E008575DC /* Resources */,
+				FA30234A1F97813800EEFB63 /* AdvancedController.swift */,
+				A5CBBF1F1C8A83FC00693175 /* AppDelegate.swift */,
+				A549EE921F94523C00E031B4 /* BuildPi.swift */,
+				A540BC541C8AB44B000D62EC /* CameraFrames.swift */,
+				A5907DD71F89BDFE0017BC5E /* Collector.swift */,
+				FA71C2971FAB754D009216E7 /* Constants.swift */,
+				A5EDFE161F861F01003ECDED /* Extractor.swift */,
+				A58014721F6E518A0062FB0C /* Frame.swift */,
+				A5AB7D381F97328600D45222 /* GlowLite.swift */,
+				A57CA8311FD25D3000D1AA8D /* GlowUtils.swift */,
+				A54CF55F1F93292500F4B61D /* OneBitExtractor.swift */,
+				A5B570ED1F6F5CAA001AA7E1 /* Sample.swift */,
+				FAA31D591F94AF84007DACF0 /* SettingsController.swift */,
+				A5CBBF211C8A83FC00693175 /* GenerationController.swift */,
+				A535B07D1F789716002F15A5 /* VonNeumannEnc.swift */,
+				A5CBBF2B1C8A83FC00693175 /* LaunchScreen.storyboard */,
+				A5CBBF231C8A83FC00693175 /* Main.storyboard */,
+				A5CBBF2E1C8A83FC00693175 /* Info.plist */,
+				A5CBBF291C8A83FC00693175 /* Assets.xcassets */,
+				A5CBBF261C8A83FC00693175 /* TrueEntropy.xcdatamodeld */,
+			);
+			path = TrueEntropy;
+			sourceTree = "<group>";
+		};
+		FA0B4C881F90FC8E008575DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5889C1F84F79600C3BC99 /* OpenSans-ExtraBold.ttf */,
+				FAA31D671F94C69A007DACF0 /* OpenSans-Regular.ttf */,
+				FAC5889D1F84F79600C3BC99 /* OpenSans-Light.ttf */,
+				FAA31D521F94ADF6007DACF0 /* splash.png */,
+				FA7A67A21F9E059000AE3E3B /* logo.png */,
+				FAA31D501F94ADF6007DACF0 /* vault12.png */,
+				FA418FCD1F97EC6D005305F0 /* bg.jpg */,
+				FAA31D611F94C60E007DACF0 /* settings_icon1.png */,
+				FAA31D621F94C60E007DACF0 /* settings_icon2.png */,
+				FAA31D631F94C60E007DACF0 /* settings_icon3.png */,
+				FAED52301F965E490087DC3C /* camera_bg.jpg */,
+				FA46270D1F84DD3500EE3A3F /* scale.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5CBBF1B1C8A83FC00693175 /* TrueEntropy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5CBBF311C8A83FC00693175 /* Build configuration list for PBXNativeTarget "TrueEntropy" */;
+			buildPhases = (
+				F6CE602B2D5A8D277D54B8A7 /* [CP] Check Pods Manifest.lock */,
+				A5CBBF181C8A83FC00693175 /* Sources */,
+				A5CBBF191C8A83FC00693175 /* Frameworks */,
+				A5CBBF1A1C8A83FC00693175 /* Resources */,
+				EC07FCF3032F7B2FF59C6C3D /* [CP] Embed Pods Frameworks */,
+				43BBA1B8A0979EFC33D41BBA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrueEntropy;
+			productName = TrueEntropy;
+			productReference = A5CBBF1C1C8A83FC00693175 /* TrueEntropy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A5CBBF141C8A83FC00693175 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Vault12;
+				TargetAttributes = {
+					A5CBBF1B1C8A83FC00693175 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = W88ZRBQD5Y;
+						LastSwiftMigration = 0900;
+					};
+				};
+			};
+			buildConfigurationList = A5CBBF171C8A83FC00693175 /* Build configuration list for PBXProject "TrueEntropy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5CBBF131C8A83FC00693175;
+			productRefGroup = A5CBBF1D1C8A83FC00693175 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5CBBF1B1C8A83FC00693175 /* TrueEntropy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A5CBBF1A1C8A83FC00693175 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA31D651F94C62B007DACF0 /* settings_icon2.png in Resources */,
+				FAA31D661F94C62F007DACF0 /* settings_icon3.png in Resources */,
+				FA46270E1F84DD3500EE3A3F /* scale.png in Resources */,
+				FAC5889E1F84F85100C3BC99 /* OpenSans-Light.ttf in Resources */,
+				FAED52311F965E4C0087DC3C /* camera_bg.jpg in Resources */,
+				FAC5889F1F84F85300C3BC99 /* OpenSans-ExtraBold.ttf in Resources */,
+				A5CBBF2D1C8A83FC00693175 /* LaunchScreen.storyboard in Resources */,
+				FAA31D641F94C629007DACF0 /* settings_icon1.png in Resources */,
+				FAA31D541F94AECC007DACF0 /* vault12.png in Resources */,
+				FAA31D681F94C69D007DACF0 /* OpenSans-Regular.ttf in Resources */,
+				A5CBBF2A1C8A83FC00693175 /* Assets.xcassets in Resources */,
+				FA7A67A31F9E059000AE3E3B /* logo.png in Resources */,
+				FAA31D551F94AECE007DACF0 /* splash.png in Resources */,
+				FA418FCE1F97EC6D005305F0 /* bg.jpg in Resources */,
+				A5CBBF251C8A83FC00693175 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43BBA1B8A0979EFC33D41BBA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC07FCF3032F7B2FF59C6C3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Sodium/Sodium.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sodium.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6CE602B2D5A8D277D54B8A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrueEntropy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A5CBBF181C8A83FC00693175 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1B76001F7D7FA2008CA324 /* (null) in Sources */,
+				A54CF5601F93292500F4B61D /* OneBitExtractor.swift in Sources */,
+				A5EDFE171F861F01003ECDED /* Extractor.swift in Sources */,
+				FA30234B1F97813800EEFB63 /* AdvancedController.swift in Sources */,
+				A5907DD81F89BDFE0017BC5E /* Collector.swift in Sources */,
+				A5AB7D391F97328600D45222 /* GlowLite.swift in Sources */,
+				A535B07E1F789716002F15A5 /* VonNeumannEnc.swift in Sources */,
+				FA71C2981FAB754D009216E7 /* Constants.swift in Sources */,
+				FAA31D5A1F94AF84007DACF0 /* SettingsController.swift in Sources */,
+				A540BC551C8AB44B000D62EC /* CameraFrames.swift in Sources */,
+				A5B570EE1F6F5CAA001AA7E1 /* Sample.swift in Sources */,
+				A549EE931F94523C00E031B4 /* BuildPi.swift in Sources */,
+				A57CA8321FD25D3000D1AA8D /* GlowUtils.swift in Sources */,
+				A5CBBF221C8A83FC00693175 /* GenerationController.swift in Sources */,
+				A5CBBF281C8A83FC00693175 /* TrueEntropy.xcdatamodeld in Sources */,
+				A5CBBF201C8A83FC00693175 /* AppDelegate.swift in Sources */,
+				A58014731F6E518A0062FB0C /* Frame.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A5CBBF231C8A83FC00693175 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5CBBF241C8A83FC00693175 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A5CBBF2B1C8A83FC00693175 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5CBBF2C1C8A83FC00693175 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A5CBBF2F1C8A83FC00693175 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5CBBF301C8A83FC00693175 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A5CBBF321C8A83FC00693175 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DB91E649D75DB1E245BDE56 /* Pods-TrueEntropy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = TrueEntropy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Sodium/Sodium/libsodium",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vault12.TrueEntropy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TrueEntropy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		A5CBBF331C8A83FC00693175 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE2D9C412443A817CB350869 /* Pods-TrueEntropy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = TrueEntropy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Sodium/Sodium/libsodium",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vault12.TrueEntropy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TrueEntropy-Bridging-Header.h";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A5CBBF171C8A83FC00693175 /* Build configuration list for PBXProject "TrueEntropy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5CBBF2F1C8A83FC00693175 /* Debug */,
+				A5CBBF301C8A83FC00693175 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5CBBF311C8A83FC00693175 /* Build configuration list for PBXNativeTarget "TrueEntropy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5CBBF321C8A83FC00693175 /* Debug */,
+				A5CBBF331C8A83FC00693175 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A5CBBF261C8A83FC00693175 /* TrueEntropy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A5CBBF271C8A83FC00693175 /* TrueEntropy.xcdatamodel */,
+			);
+			currentVersion = A5CBBF271C8A83FC00693175 /* TrueEntropy.xcdatamodel */;
+			path = TrueEntropy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A5CBBF141C8A83FC00693175 /* Project object */;
+}
