@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1299321174">
+    <a href="https://itunes.apple.com/us/app/trueentropy/id1299321174">
         <img src="https://i.imgur.com/FjhSNLm.png">
     </a>
 </p>
@@ -9,20 +9,20 @@
         <img src="https://slack.vault12.com/badge.svg" alt="Slack Status" />
     </a>
     <img src="https://img.shields.io/badge/Swift-4.0-blue.svg" />
-    <a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1299321174">
+    <a href="https://itunes.apple.com/us/app/trueentropy/id1299321174">
         <img src="https://img.shields.io/itunes/v/1299321174.svg" alt="Download on the App Store" />
     </a>
     <a href="https://opensource.org/licenses/MIT">
       <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" />
     </a>
-    <a href="https://twitter.com/intent/tweet?text=How%20to%20get%20true%20randomness%20from%20your%20Apple%20device%20with%20particle%20physics%20and%20thermal%20entropy&url=https://medium.com/@vault12&via=_vault12_&hashtags=crypto,ios,entropy">
+    <a href="https://twitter.com/intent/tweet?text=How%20to%20get%20true%20randomness%20from%20your%20Apple%20device%20with%20particle%20physics%20and%20thermal%20entropy&url=https://medium.com/vault12&via=_vault12_&hashtags=crypto,ios,entropy">
       <img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="Tweet" />
     </a>
 </p>
 
 Use your phone's camera as a high volume thermal entropy generator - creates genuine random numbers at a rate of over 18 Mb/min.
 
-[<img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg">](https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1299321174)
+[<img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg">](https://itunes.apple.com/us/app/trueentropy/id1299321174)
 
 ## How it works
 
@@ -38,7 +38,7 @@ Read full technical notes about *TrueEntropy* on [Medium](https://medium.com/vau
 
 ## Features
 
-* Delivering entropy via Airdrop or via network ([Zax relay](https://github.com/vault12/zax))
+* Delivering entropy via AirDrop or via network ([Zax relay](https://github.com/vault12/zax))
 * Works on iPhone and iPad
 * Configurable block size and amount
 * Option to decline blocks with low χ²
