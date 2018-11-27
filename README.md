@@ -5,9 +5,6 @@
 </p>
 
 <p align="center">
-    <a href="https://slack.vault12.com">
-        <img src="https://slack.vault12.com/badge.svg" alt="Slack Status" />
-    </a>
     <img src="https://img.shields.io/badge/Swift-4.0-blue.svg" />
     <a href="https://itunes.apple.com/us/app/trueentropy/id1299321174">
         <img src="https://img.shields.io/itunes/v/1299321174.svg" alt="Download on the App Store" />
