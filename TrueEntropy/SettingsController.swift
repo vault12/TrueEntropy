@@ -63,8 +63,9 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     recipientAddress.textContainer.lineFragmentPadding = 0
     recipientAddress.text = defaults.string(forKey: "recipient")
     recipientAddressPlaceholder.isHidden = recipientAddress.text.count > 0
-
-    devicePK.text = GlowLite.get_station_key().publicKey.base64EncodedString()
+    
+    
+    devicePK.text = Data(bytes: GlowLite.get_station_key().publicKey).base64EncodedString()
 
     for btn in (buttons1 + buttons2) {
       btn.layer.borderWidth = 1

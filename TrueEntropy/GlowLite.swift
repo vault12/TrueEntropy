@@ -8,7 +8,7 @@
 
 import Foundation
 import Sodium
-import libsodium
+import Clibsodium
 
 class GlowLite : Utils {
   var NaCl = Sodium()
@@ -116,7 +116,7 @@ class GlowLite : Utils {
     if self.our_session_key == nil { return }
 
     // Line 2: client side temp session key
-    body += self.our_session_key!.publicKey.base64EncodedString() + Utils.EOL
+    body += Data(bytes: self.our_session_key!.publicKey).base64EncodedString() + Utils.EOL
 
     // Line 3: outter nonce, which we will use to encrypt outter box
     let nonce_outter = self.make_nonce()
@@ -126,24 +126,24 @@ class GlowLite : Utils {
     let sign = self.h2([UInt8](self.our_session_key!.publicKey) + self.relay_token + self.client_token)
     let nonce_inner = self.make_nonce()
     let ctext = self.NaCl.box.seal(
-      message: Data(sign),
-      recipientPublicKey: self.zax_session_key!,
-      senderSecretKey: self.station_key!.secretKey,
-      nonce: nonce_inner)!
+      message: sign,
+      recipientPublicKey: Array(self.zax_session_key!),
+      senderSecretKey: Array(self.station_key!.secretKey),
+      nonce: Array(nonce_inner))!
 
     let inner = self.to_json(obj: [
-      "pub_key":self.station_key!.publicKey,
+      "pub_key":Data(self.station_key!.publicKey),
       "nonce":nonce_inner,
-      "ctext":ctext])
+      "ctext":Data(ctext)])
 
-    let msg: Data = self.NaCl.box.seal(
-      message: inner,
-      recipientPublicKey: self.zax_session_key!,
-      senderSecretKey: self.our_session_key!.secretKey,
-      nonce: nonce_outter)!
+    let msg = self.NaCl.box.seal(
+      message: Array(inner),
+      recipientPublicKey: Array(self.zax_session_key!),
+      senderSecretKey: Array(self.our_session_key!.secretKey),
+      nonce: Array(nonce_outter))!
 
     // Line 4: outter cipher text
-    body += msg.base64EncodedString()
+    body += Data(msg).base64EncodedString()
     let prove_hpk_req = self.relayRequest(call: "prove", body: body) {
       (data: Data!, response: URLResponse!, e1: Error!) -> Void in
       if e1 == nil && (response as! HTTPURLResponse).statusCode == 200 {
@@ -175,7 +175,7 @@ class GlowLite : Utils {
     } else {
       seed = defaults.object(forKey: storage_name) as! Data
     }
-    return Sodium().box.keyPair(seed: seed)!
+    return Sodium().box.keyPair(seed: Array(seed))!
   }
 
   func load_station_key() -> Box.KeyPair? {
@@ -199,26 +199,26 @@ class GlowLite : Utils {
 
     autoreleasepool {
       // We will encrypt file with this symmetric key
-      let cur_key = self.NaCl.secretBox.key()!
+      let cur_key = self.NaCl.secretBox.key()
 
       // Meta data about file to be uploaded
       let meta = [
         "name": name,
         "orig_size": String(file.count),
-        "skey": cur_key.base64EncodedString()
+        "skey": Data(bytes: cur_key).base64EncodedString()
       ]
 
       // We encrypt metadata to destnation hpk_to from our station hpk
       // This is private communication between two hpk addresses
       let nonce = self.make_nonce()
       let ctext = self.NaCl.box.seal(
-        message: self.to_json(obj: meta),
-        recipientPublicKey: Data(keyToArray),
-        senderSecretKey: self.station_key!.secretKey,
-        nonce: nonce)!
+        message: Array(self.to_json(obj: meta)),
+        recipientPublicKey: keyToArray,
+        senderSecretKey: Array(self.station_key!.secretKey),
+        nonce: Array(nonce))!
 
       // Encrypted file metadata
-      let meta_json = [ "ctext": ctext, "nonce": nonce ]
+      let meta_json = [ "ctext": Data(ctext), "nonce": nonce ] as [String: Data]
 
       // Command is 3 lines: hpk_from, nonce, ctext of command body
       let nonce_cmd = self.make_nonce()
@@ -232,33 +232,33 @@ class GlowLite : Utils {
       // Encrypting command. This is private communcation between
       // this station hpk and relay
       let cmd_ctext = self.NaCl.box.seal(
-        message: cmd_json,
-        recipientPublicKey: self.zax_session_key!,
-        senderSecretKey: self.our_session_key!.secretKey,
-        nonce: nonce_cmd)!
+        message: Array(cmd_json),
+        recipientPublicKey: Array(self.zax_session_key!),
+        senderSecretKey: Array(self.our_session_key!.secretKey),
+        nonce: Array(nonce_cmd))!
 
       func uploadChunk(_ n:Int, _ uploadID:String, _ chunks:Int, _ max_chunk:Int) -> URLSessionDataTask {
         return autoreleasepool {
           let top = (n+1)*max_chunk > file.count ? file.count : (n+1)*max_chunk
           let data = Data(file[n*max_chunk ..< top ])
 
-          let (file_ctext, file_nonce) = self.NaCl.secretBox.seal(message: data, secretKey: cur_key)!
+          let (file_ctext, file_nonce) = self.NaCl.secretBox.seal(message: Array(data), secretKey: cur_key)!
 
           let cmd_json = self.to_json(
             obj: [
               "cmd": "uploadFileChunk",
               "uploadID": uploadID,
-              "nonce": file_nonce.base64EncodedString()],
+                "nonce": Data(bytes: file_nonce).base64EncodedString()],
             extra: "\"part\":\(n),\"last_chunk\":\(String(n == chunks - 1))" )
 
           let nonce_cmd = self.make_nonce()
           let cmd_ctext = self.NaCl.box.seal(
-            message: cmd_json,
-            recipientPublicKey: self.zax_session_key!,
-            senderSecretKey: self.our_session_key!.secretKey,
-            nonce: nonce_cmd)!
+            message: Array(cmd_json),
+            recipientPublicKey: Array(self.zax_session_key!),
+            senderSecretKey: Array(self.our_session_key!.secretKey),
+            nonce: Array(nonce_cmd))!
 
-          let body = self.make_body([Data(self.hpk), nonce_cmd, cmd_ctext, file_ctext ])
+          let body = self.make_body([Data(self.hpk), nonce_cmd, Data(cmd_ctext), Data(file_ctext) ])
 
           return self.relayRequest(call: "command", body: body) {
             (data: Data!, response: URLResponse!, e: Error!) -> Void in
@@ -272,7 +272,7 @@ class GlowLite : Utils {
         }
       }
 
-      let body = self.make_body([Data(self.hpk), nonce_cmd, cmd_ctext])
+      let body = self.make_body([Data(self.hpk), Data(nonce_cmd), Data(cmd_ctext)])
       let startUpload = self.relayRequest(call: "command", body: body) {
         (data: Data!, response: URLResponse!, e: Error!) -> Void in
         if e == nil {
@@ -281,12 +281,12 @@ class GlowLite : Utils {
             let nonce = Data(base64Encoded:String(lines[0]))!
             let ctext = Data(base64Encoded:String(lines[1]))!
             let answer = self.NaCl.box.open(
-              authenticatedCipherText: ctext,
-              senderPublicKey: self.zax_session_key!,
-              recipientSecretKey: self.our_session_key!.secretKey,
-              nonce: nonce)!
+              authenticatedCipherText: Array(ctext),
+              senderPublicKey: Array(self.zax_session_key!),
+              recipientSecretKey: Array(self.our_session_key!.secretKey),
+              nonce: Array(nonce))!
 
-            guard let json = try? JSONSerialization.jsonObject(with: answer) as! [String:Any] else { return }
+            guard let json = try? JSONSerialization.jsonObject(with: Data(answer)) as! [String:Any] else { return }
 
             let max_chunk = json["max_chunk_size"] as! Int - 100 // Reserve few bytes for encryption data
             let uploadID = json["uploadID"] as! String

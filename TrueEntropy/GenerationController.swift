@@ -205,12 +205,14 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
     FileManager.default.createFile(atPath: path2.path, contents: Data(bytes: entropy), attributes: nil)
     files.append(path2)
 
-    // AirDrop the files
-    let controller  = UIActivityViewController(activityItems: files, applicationActivities: nil)
-    controller.popoverPresentationController?.sourceView = self.view
-    controller.completionWithItemsHandler = doneSharingHandler
-    controller.excludedActivityTypes = [.postToTwitter, .saveToCameraRoll ,.postToFacebook, .postToWeibo, .message, .mail, .print, .copyToPasteboard, .assignToContact, .saveToCameraRoll, .addToReadingList, .postToFlickr, .postToVimeo, .postToTencentWeibo]
-    self.present(controller, animated: true)
+    DispatchQueue.main.async {
+      // AirDrop the files
+      let controller  = UIActivityViewController(activityItems: files, applicationActivities: nil)
+      controller.popoverPresentationController?.sourceView = self.view
+      controller.completionWithItemsHandler = self.doneSharingHandler
+      controller.excludedActivityTypes = [.postToTwitter, .saveToCameraRoll ,.postToFacebook, .postToWeibo, .message, .mail, .print, .copyToPasteboard, .assignToContact, .saveToCameraRoll, .addToReadingList, .postToFlickr, .postToVimeo, .postToTencentWeibo]
+      self.present(controller, animated: true)
+    }
   }
 
   func doneSharingHandler(activityType: UIActivityType?, shared: Bool, items: [Any]?, error: Error?) {
