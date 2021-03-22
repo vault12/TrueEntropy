@@ -209,6 +209,10 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
       // AirDrop the files
       let controller  = UIActivityViewController(activityItems: files, applicationActivities: nil)
       controller.popoverPresentationController?.sourceView = self.view
+      let viewRect = self.view.bounds
+      let sourceRect = CGRect(x: 0, y: viewRect.height, width: viewRect.width, height: 0)
+      controller.popoverPresentationController?.sourceRect = sourceRect
+      controller.preferredContentSize = CGSize(width: viewRect.width, height: viewRect.height)
       controller.completionWithItemsHandler = self.doneSharingHandler
       controller.excludedActivityTypes = [.postToTwitter, .saveToCameraRoll ,.postToFacebook, .postToWeibo, .message, .mail, .print, .copyToPasteboard, .assignToContact, .saveToCameraRoll, .addToReadingList, .postToFlickr, .postToVimeo, .postToTencentWeibo]
       self.present(controller, animated: true)
