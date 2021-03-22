@@ -222,7 +222,7 @@
 					A5CBBF1B1C8A83FC00693175 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = W88ZRBQD5Y;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -448,7 +448,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "TrueEntropy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -470,7 +470,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TrueEntropy-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

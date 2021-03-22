@@ -74,7 +74,7 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
       coloredLayer.cornerRadius = cameraRadius
       self.view!.layer.addSublayer(coloredLayer)
     }
-    overlayView.superview?.bringSubview(toFront: overlayView)
+    overlayView.superview?.bringSubviewToFront(overlayView)
 
     // Circular upload progress bar
     let circleLayer = CAShapeLayer()
@@ -104,8 +104,8 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
     // Text animation
     let animation: CATransition = CATransition()
     animation.duration = 0.1
-    animation.type = kCATransitionFade
-    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    animation.type = CATransitionType.fade
+    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
     for i in 0..<stats.count {
       settingsTable.cellForRow(at: IndexPath(row: i, section: 0))?.layer.add(animation, forKey: "changeTextTransition")
     }
@@ -202,7 +202,7 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
     }
 
     let path2 = dir.appendingPathComponent("TE_block\(blockNumber)_\(timestamp).bin")
-    FileManager.default.createFile(atPath: path2.path, contents: Data(bytes: entropy), attributes: nil)
+    FileManager.default.createFile(atPath: path2.path, contents: Data(entropy), attributes: nil)
     files.append(path2)
 
     DispatchQueue.main.async {
@@ -215,7 +215,7 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
     }
   }
 
-  func doneSharingHandler(activityType: UIActivityType?, shared: Bool, items: [Any]?, error: Error?) {
+  func doneSharingHandler(activityType: UIActivity.ActivityType?, shared: Bool, items: [Any]?, error: Error?) {
     if !defaults.bool(forKey: "block_amount_unlimited") && (self.blockNumber == defaults.integer(forKey: "block_amount")) {
       self.closeView()
     } else {

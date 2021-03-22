@@ -116,7 +116,7 @@ class GlowLite : Utils {
     if self.our_session_key == nil { return }
 
     // Line 2: client side temp session key
-    body += Data(bytes: self.our_session_key!.publicKey).base64EncodedString() + Utils.EOL
+    body += Data(self.our_session_key!.publicKey).base64EncodedString() + Utils.EOL
 
     // Line 3: outter nonce, which we will use to encrypt outter box
     let nonce_outter = self.make_nonce()
@@ -205,7 +205,7 @@ class GlowLite : Utils {
       let meta = [
         "name": name,
         "orig_size": String(file.count),
-        "skey": Data(bytes: cur_key).base64EncodedString()
+        "skey": Data(cur_key).base64EncodedString()
       ]
 
       // We encrypt metadata to destnation hpk_to from our station hpk
@@ -248,7 +248,7 @@ class GlowLite : Utils {
             obj: [
               "cmd": "uploadFileChunk",
               "uploadID": uploadID,
-                "nonce": Data(bytes: file_nonce).base64EncodedString()],
+                "nonce": Data(file_nonce).base64EncodedString()],
             extra: "\"part\":\(n),\"last_chunk\":\(String(n == chunks - 1))" )
 
           let nonce_cmd = self.make_nonce()
@@ -286,7 +286,7 @@ class GlowLite : Utils {
               recipientSecretKey: Array(self.our_session_key!.secretKey),
               nonce: Array(nonce))!
 
-            guard let json = try? JSONSerialization.jsonObject(with: Data(answer)) as! [String:Any] else { return }
+            guard let json = try? JSONSerialization.jsonObject(with: Data(answer)) as? [String:Any] else { return }
 
             let max_chunk = json["max_chunk_size"] as! Int - 100 // Reserve few bytes for encryption data
             let uploadID = json["uploadID"] as! String

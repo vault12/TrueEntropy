@@ -64,9 +64,9 @@ class Extractor {
     func report(_ action:String, byte:UInt32, _ values:[Int] = [], _ size:Int = 0) {
       if !self.debug { return }
       if action == "encoding" {
-        print("encoding \(values) with \(byte,String(byte,radix:2),size)")
+        print("encoding \(values) with \((byte,String(byte,radix:2),size))")
       } else {
-        print("\(action) \(byte)=\(String(byte,radix:2)) at [\(self.pos,self.bitPos)]")
+        print("\(action) \(byte)=\(String(byte,radix:2)) at [\((self.pos,self.bitPos))]")
       }
     }
 

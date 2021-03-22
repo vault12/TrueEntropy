@@ -65,7 +65,7 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     recipientAddressPlaceholder.isHidden = recipientAddress.text.count > 0
     
     
-    devicePK.text = Data(bytes: GlowLite.get_station_key().publicKey).base64EncodedString()
+    devicePK.text = Data(GlowLite.get_station_key().publicKey).base64EncodedString()
 
     for btn in (buttons1 + buttons2) {
       btn.layer.borderWidth = 1
@@ -176,7 +176,7 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     let overlayView = UIView(frame: UIScreen.main.bounds)
     overlayView.tag = 1000
     overlayView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+    let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
     activityIndicator.center = overlayView.center
     overlayView.addSubview(activityIndicator)
     activityIndicator.startAnimating()
@@ -220,18 +220,18 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
       } else {
         let alert = UIAlertController(title: "Camera permission",
                                       message: "TrueEntropy needs to access the camera. Please allow it in Settings to continue.",
-                                      preferredStyle: UIAlertControllerStyle.alert)
+                                      preferredStyle: UIAlertController.Style.alert)
 
         alert.addAction(UIAlertAction(title: "Yes",
                                       style: .default,
                                       handler: { (action) in
-                                        guard let settingsURL = NSURL(string: UIApplicationOpenSettingsURLString) as URL? else { return }
+                                        guard let settingsURL = NSURL(string: UIApplication.openSettingsURLString) as URL? else { return }
                                         UIApplication.shared.openURL(settingsURL)
                                         self.hideOverlay()
                                       }
         ))
         alert.addAction(UIAlertAction(title: "Cancel",
-                                      style: UIAlertActionStyle.cancel,
+                                      style: UIAlertAction.Style.cancel,
                                       handler: { (action) in
                                         self.hideOverlay()
                                       }
@@ -263,8 +263,8 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
 
   func showError(_ title: String, _ msg: String) {
     hideOverlay()
-    let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
-    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+    let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
     self.present(alert, animated: true, completion: nil)
   }
 
