@@ -260,7 +260,9 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
   }
 
   func closeView() {
-    self.performSegue(withIdentifier: "backToSettings", sender: self)
-    self.dismiss(animated: false, completion: nil)
+    DispatchQueue.main.async {
+      self.performSegue(withIdentifier: "backToSettings", sender: self)
+      self.dismiss(animated: false, completion: nil)
+    }
   }
 }
