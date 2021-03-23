@@ -15,7 +15,7 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
   var defaults = UserDefaults.standard
 
   var cameraRadius: CGFloat = 0
-  var cameraCenterY: CGFloat = 0
+  var cameraTopY: CGFloat = 0
 
   @IBOutlet weak var overlay: UIImageView!
   @IBOutlet weak var overlayView: UIView!
@@ -40,11 +40,11 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
     settingsTable.tableFooterView = UIView()
 
     cameraRadius = (self.view!.layer.bounds.width - 20) / 2
-    cameraCenterY = (self.view!.layer.bounds.height - 250) / 2 - cameraRadius
-
-    // fix layout for iPhone X
-    if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
-      cameraCenterY -= 16
+    cameraTopY = (self.view!.layer.bounds.height - 250) / 2 - cameraRadius
+    let hasBottomNotch = (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0) > 0;
+    // fix layout for iPhones with bottom notch (no home button)
+    if UIDevice().userInterfaceIdiom == .phone && hasBottomNotch {
+      cameraTopY -= 16
     }
 
     addCameraLayer()
@@ -56,7 +56,7 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
   }
 
   private func addCameraLayer() {
-    let cameraFrame = CGRect(x: 10, y: cameraCenterY,  width: cameraRadius * 2, height: cameraRadius * 2)
+    let cameraFrame = CGRect(x: 10, y: cameraTopY,  width: cameraRadius * 2, height: cameraRadius * 2)
 
     if (AVCaptureDevice.devices(for: AVMediaType.video).count > 0) {
       // Show camera layer
@@ -229,7 +229,7 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
   }
 
   func progressPath(_ percentage: CGFloat) -> CGPath {
-    return UIBezierPath(arcCenter: CGPoint(x: 10 + self.cameraRadius, y: self.cameraCenterY + self.cameraRadius),
+    return UIBezierPath(arcCenter: CGPoint(x: 10 + self.cameraRadius, y: self.cameraTopY + self.cameraRadius),
                         radius: self.cameraRadius - 2, startAngle: -CGFloat.pi / 2.0,
                         endAngle: -CGFloat.pi / 2.0 + (CGFloat.pi * 2.0 * percentage), clockwise: true).cgPath
   }
