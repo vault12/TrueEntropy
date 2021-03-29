@@ -15,13 +15,28 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.8</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>vault12.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Collect entropy</string>
 	<key>UIAppFonts</key>
@@ -54,21 +69,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-  <key>NSAppTransportSecurity</key>
-  <dict>
-      <key>NSExceptionDomains</key>
-      <dict>
-          <key>vault12.com</key>
-          <dict>
-               <key>NSExceptionRequiresForwardSecrecy</key>
-               <false/>
-               <key>NSIncludesSubdomains</key>
-               <true/>
-               <key>NSExceptionAllowsInsecureHTTPLoads</key>
-               <true/>
-          </dict>
-      </dict>
-  </dict>
-
 </dict>
 </plist>
