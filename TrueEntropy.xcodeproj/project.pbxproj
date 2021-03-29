@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A1281EE7AFB5A19BFC9034F /* Pods_TrueEntropy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F567D41C9ED2B6239F0A2BD /* Pods_TrueEntropy.framework */; };
 		A535B07E1F789716002F15A5 /* VonNeumannEnc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535B07D1F789716002F15A5 /* VonNeumannEnc.swift */; };
 		A540BC551C8AB44B000D62EC /* CameraFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A540BC541C8AB44B000D62EC /* CameraFrames.swift */; };
 		A549EE931F94523C00E031B4 /* BuildPi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549EE921F94523C00E031B4 /* BuildPi.swift */; };
@@ -25,7 +26,7 @@
 		A5CBBF2A1C8A83FC00693175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CBBF291C8A83FC00693175 /* Assets.xcassets */; };
 		A5CBBF2D1C8A83FC00693175 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CBBF2B1C8A83FC00693175 /* LaunchScreen.storyboard */; };
 		A5EDFE171F861F01003ECDED /* Extractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EDFE161F861F01003ECDED /* Extractor.swift */; };
-		FA1B76001F7D7FA2008CA324 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		FA1B76001F7D7FA2008CA324 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		FA30234B1F97813800EEFB63 /* AdvancedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30234A1F97813800EEFB63 /* AdvancedController.swift */; };
 		FA418FCE1F97EC6D005305F0 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA418FCD1F97EC6D005305F0 /* bg.jpg */; };
 		FA46270E1F84DD3500EE3A3F /* scale.png in Resources */ = {isa = PBXBuildFile; fileRef = FA46270D1F84DD3500EE3A3F /* scale.png */; };
@@ -44,6 +45,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F567D41C9ED2B6239F0A2BD /* Pods_TrueEntropy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrueEntropy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4302596092EFE9E0F7A1B5A3 /* Pods-TrueEntropy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueEntropy.debug.xcconfig"; path = "Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy.debug.xcconfig"; sourceTree = "<group>"; };
+		4965A889729046C1D7A149FA /* Pods-TrueEntropy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueEntropy.release.xcconfig"; path = "Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy.release.xcconfig"; sourceTree = "<group>"; };
+		64D4711A2612124D0059E5AE /* Clibsodium.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Clibsodium.xcframework; path = Pods/Sodium/Clibsodium.xcframework; sourceTree = "<group>"; };
 		A535B07D1F789716002F15A5 /* VonNeumannEnc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VonNeumannEnc.swift; sourceTree = "<group>"; };
 		A540BC461C8AAE43000D62EC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A540BC481C8AAE57000D62EC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -90,15 +95,27 @@
 			files = (
 				A58014751F6E5C790062FB0C /* CoreVideo.framework in Frameworks */,
 				A58014741F6E5C710062FB0C /* AVFoundation.framework in Frameworks */,
+				2A1281EE7AFB5A19BFC9034F /* Pods_TrueEntropy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9923E75561DB8B0F5B7368C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4302596092EFE9E0F7A1B5A3 /* Pods-TrueEntropy.debug.xcconfig */,
+				4965A889729046C1D7A149FA /* Pods-TrueEntropy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A5AB7D3A1F9740A500D45222 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				64D4711A2612124D0059E5AE /* Clibsodium.xcframework */,
+				2F567D41C9ED2B6239F0A2BD /* Pods_TrueEntropy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,6 +130,7 @@
 				A5CBBF1D1C8A83FC00693175 /* Products */,
 				A5AB7D3A1F9740A500D45222 /* Frameworks */,
 				A540BC4E1C8AB1F3000D62EC /* TrueEntropy-Bridging-Header.h */,
+				9923E75561DB8B0F5B7368C5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,6 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5CBBF311C8A83FC00693175 /* Build configuration list for PBXNativeTarget "TrueEntropy" */;
 			buildPhases = (
+				994843277FDC854A944620DD /* [CP] Check Pods Manifest.lock */,
 				A5CBBF181C8A83FC00693175 /* Sources */,
 				A5CBBF191C8A83FC00693175 /* Frameworks */,
 				A5CBBF1A1C8A83FC00693175 /* Resources */,
@@ -187,8 +206,6 @@
 			dependencies = (
 			);
 			name = TrueEntropy;
-			packageProductDependencies = (
-			);
 			productName = TrueEntropy;
 			productReference = A5CBBF1C1C8A83FC00693175 /* TrueEntropy.app */;
 			productType = "com.apple.product-type.application";
@@ -220,8 +237,6 @@
 				Base,
 			);
 			mainGroup = A5CBBF131C8A83FC00693175;
-			packageReferences = (
-			);
 			productRefGroup = A5CBBF1D1C8A83FC00693175 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -256,12 +271,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		994843277FDC854A944620DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrueEntropy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5CBBF181C8A83FC00693175 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA1B76001F7D7FA2008CA324 /* (null) in Sources */,
+				FA1B76001F7D7FA2008CA324 /* BuildFile in Sources */,
 				A54CF5601F93292500F4B61D /* OneBitExtractor.swift in Sources */,
 				A5EDFE171F861F01003ECDED /* Extractor.swift in Sources */,
 				FA30234B1F97813800EEFB63 /* AdvancedController.swift in Sources */,
@@ -413,11 +453,21 @@
 		};
 		A5CBBF321C8A83FC00693175 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4302596092EFE9E0F7A1B5A3 /* Pods-TrueEntropy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Sodium/Sodium.framework/Headers\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/Clibsodium/Headers\"/**",
+				);
 				INFOPLIST_FILE = TrueEntropy/Info.plist;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Sodium/Sodium/libsodium",
+				);
 				MARKETING_VERSION = 0.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vault12.TrueEntropy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,11 +481,21 @@
 		};
 		A5CBBF331C8A83FC00693175 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4965A889729046C1D7A149FA /* Pods-TrueEntropy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Sodium/Sodium.framework/Headers\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/Clibsodium/Headers\"/**",
+				);
 				INFOPLIST_FILE = TrueEntropy/Info.plist;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Sodium/Sodium/libsodium",
+				);
 				MARKETING_VERSION = 0.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vault12.TrueEntropy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -6,6 +6,5 @@
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
-Podfile.lock
 Pods/
-*.xcworkspace/
+xcuserdata/
