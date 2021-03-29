@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64D117732611DE1E00D9CE0A /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = 64D117722611DE1E00D9CE0A /* Sodium */; };
 		A535B07E1F789716002F15A5 /* VonNeumannEnc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535B07D1F789716002F15A5 /* VonNeumannEnc.swift */; };
 		A540BC551C8AB44B000D62EC /* CameraFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A540BC541C8AB44B000D62EC /* CameraFrames.swift */; };
 		A549EE931F94523C00E031B4 /* BuildPi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549EE921F94523C00E031B4 /* BuildPi.swift */; };
@@ -91,7 +90,6 @@
 			files = (
 				A58014751F6E5C790062FB0C /* CoreVideo.framework in Frameworks */,
 				A58014741F6E5C710062FB0C /* AVFoundation.framework in Frameworks */,
-				64D117732611DE1E00D9CE0A /* Sodium in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +188,6 @@
 			);
 			name = TrueEntropy;
 			packageProductDependencies = (
-				64D117722611DE1E00D9CE0A /* Sodium */,
 			);
 			productName = TrueEntropy;
 			productReference = A5CBBF1C1C8A83FC00693175 /* TrueEntropy.app */;
@@ -208,6 +205,7 @@
 				TargetAttributes = {
 					A5CBBF1B1C8A83FC00693175 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = W88ZRBQD5Y;
 						LastSwiftMigration = 1240;
 					};
 				};
@@ -223,7 +221,6 @@
 			);
 			mainGroup = A5CBBF131C8A83FC00693175;
 			packageReferences = (
-				64D117712611DE1E00D9CE0A /* XCRemoteSwiftPackageReference "swift-sodium" */,
 			);
 			productRefGroup = A5CBBF1D1C8A83FC00693175 /* Products */;
 			projectDirPath = "";
@@ -408,8 +405,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -472,25 +468,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		64D117712611DE1E00D9CE0A /* XCRemoteSwiftPackageReference "swift-sodium" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/junelife/swift-sodium.git";
-			requirement = {
-				kind = exactVersion;
-				version = 0.9.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		64D117722611DE1E00D9CE0A /* Sodium */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 64D117712611DE1E00D9CE0A /* XCRemoteSwiftPackageReference "swift-sodium" */;
-			productName = Sodium;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A5CBBF261C8A83FC00693175 /* TrueEntropy.xcdatamodeld */ = {
