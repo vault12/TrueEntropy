@@ -2,10 +2,9 @@
 
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
+*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
-Podfile.lock
 Pods/
-*.xcworkspace/
+xcuserdata/

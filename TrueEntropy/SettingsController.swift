@@ -45,7 +45,7 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
       "block_size": 3, // enum, 1MB - see AdvancedController
       "block_amount": 3,
       "block_amount_unlimited": false,
-      "relay": "https://zax-test.vault12.com",
+      "relay": "https://z3.vault12.com",
       "recipient": "",
       "x2_limit": 330,
       "x2_limit_enabled": false
@@ -63,8 +63,9 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     recipientAddress.textContainer.lineFragmentPadding = 0
     recipientAddress.text = defaults.string(forKey: "recipient")
     recipientAddressPlaceholder.isHidden = recipientAddress.text.count > 0
-
-    devicePK.text = GlowLite.get_station_key().publicKey.base64EncodedString()
+    
+    
+    devicePK.text = Data(GlowLite.get_station_key().publicKey).base64EncodedString()
 
     for btn in (buttons1 + buttons2) {
       btn.layer.borderWidth = 1
@@ -175,7 +176,7 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     let overlayView = UIView(frame: UIScreen.main.bounds)
     overlayView.tag = 1000
     overlayView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+    let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
     activityIndicator.center = overlayView.center
     overlayView.addSubview(activityIndicator)
     activityIndicator.startAnimating()
@@ -212,30 +213,30 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
 
   func goToGenerator() {
     AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
-      if response {
-        DispatchQueue.main.async {
+      DispatchQueue.main.async {
+        if response {
           self.performSegue(withIdentifier: "goToCamera", sender: nil)
-        }
-      } else {
-        let alert = UIAlertController(title: "Camera permission",
-                                      message: "TrueEntropy needs to access the camera. Please allow it in Settings to continue.",
-                                      preferredStyle: UIAlertControllerStyle.alert)
+        } else {
+          let alert = UIAlertController(title: "Camera permission",
+                                        message: "TrueEntropy needs to access the camera. Please allow it in Settings to continue.",
+                                        preferredStyle: UIAlertController.Style.alert)
 
-        alert.addAction(UIAlertAction(title: "Yes",
-                                      style: .default,
-                                      handler: { (action) in
-                                        guard let settingsURL = NSURL(string: UIApplicationOpenSettingsURLString) as URL? else { return }
-                                        UIApplication.shared.openURL(settingsURL)
-                                        self.hideOverlay()
-                                      }
-        ))
-        alert.addAction(UIAlertAction(title: "Cancel",
-                                      style: UIAlertActionStyle.cancel,
-                                      handler: { (action) in
-                                        self.hideOverlay()
-                                      }
-        ))
-        self.present(alert, animated: true, completion: nil)
+          alert.addAction(UIAlertAction(title: "Yes",
+                                        style: .default,
+                                        handler: { (action) in
+                                          guard let settingsURL = NSURL(string: UIApplication.openSettingsURLString) as URL? else { return }
+                                          UIApplication.shared.openURL(settingsURL)
+                                          self.hideOverlay()
+                                        }
+          ))
+          alert.addAction(UIAlertAction(title: "Cancel",
+                                        style: UIAlertAction.Style.cancel,
+                                        handler: { (action) in
+                                          self.hideOverlay()
+                                        }
+          ))
+          self.present(alert, animated: true, completion: nil)
+        }
       }
     }
   }
@@ -261,10 +262,12 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
   }
 
   func showError(_ title: String, _ msg: String) {
-    hideOverlay()
-    let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
-    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
-    self.present(alert, animated: true, completion: nil)
+    DispatchQueue.main.async {
+      self.hideOverlay()
+      let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+      alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+      self.present(alert, animated: true, completion: nil)
+    }
   }
 
   func clearCache() {

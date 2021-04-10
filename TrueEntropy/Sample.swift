@@ -47,7 +47,7 @@ class Sample {
 
   // Calculate all stats in one loop
   func do_stats() {
-    var (sum,sum_sq,dcount) = (Int: 0, Int: 0, Double(self.count))
+    var (sum,sum_sq,dcount) = (Int(0), Int(0), Double(self.count))
 
     // Do Int math first, since it is faster
     for s in self.samples {
@@ -116,7 +116,7 @@ class Sample {
   // there is not enough itensity value for the noise to register: 255-255 = 0.
   func remove_zero_lines(max_zeroes:Int = 7)  {
     var toRemove:[(Int,Int)] = []
-    var ( range_start, range_count ) = (Int: 0, Int: 0)
+    var ( range_start, range_count ) = (Int(0), Int(0))
     // Record zero sequences to be removed
     for i in 0 ..< self.count {
       let s = self.samples[i]

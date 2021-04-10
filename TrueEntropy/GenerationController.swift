@@ -15,7 +15,7 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
   var defaults = UserDefaults.standard
 
   var cameraRadius: CGFloat = 0
-  var cameraCenterY: CGFloat = 0
+  var cameraTopY: CGFloat = 0
 
   @IBOutlet weak var overlay: UIImageView!
   @IBOutlet weak var overlayView: UIView!
@@ -40,11 +40,11 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
     settingsTable.tableFooterView = UIView()
 
     cameraRadius = (self.view!.layer.bounds.width - 20) / 2
-    cameraCenterY = (self.view!.layer.bounds.height - 250) / 2 - cameraRadius
-
-    // fix layout for iPhone X
-    if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
-      cameraCenterY -= 16
+    cameraTopY = (self.view!.layer.bounds.height - 250) / 2 - cameraRadius
+    let hasBottomNotch = (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0) > 0;
+    // fix layout for iPhones with bottom notch (no home button)
+    if UIDevice().userInterfaceIdiom == .phone && hasBottomNotch {
+      cameraTopY -= 16
     }
 
     addCameraLayer()
@@ -56,7 +56,7 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
   }
 
   private func addCameraLayer() {
-    let cameraFrame = CGRect(x: 10, y: cameraCenterY,  width: cameraRadius * 2, height: cameraRadius * 2)
+    let cameraFrame = CGRect(x: 10, y: cameraTopY,  width: cameraRadius * 2, height: cameraRadius * 2)
 
     if (AVCaptureDevice.devices(for: AVMediaType.video).count > 0) {
       // Show camera layer
@@ -74,7 +74,7 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
       coloredLayer.cornerRadius = cameraRadius
       self.view!.layer.addSublayer(coloredLayer)
     }
-    overlayView.superview?.bringSubview(toFront: overlayView)
+    overlayView.superview?.bringSubviewToFront(overlayView)
 
     // Circular upload progress bar
     let circleLayer = CAShapeLayer()
@@ -104,8 +104,8 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
     // Text animation
     let animation: CATransition = CATransition()
     animation.duration = 0.1
-    animation.type = kCATransitionFade
-    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    animation.type = CATransitionType.fade
+    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
     for i in 0..<stats.count {
       settingsTable.cellForRow(at: IndexPath(row: i, section: 0))?.layer.add(animation, forKey: "changeTextTransition")
     }
@@ -202,18 +202,24 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
     }
 
     let path2 = dir.appendingPathComponent("TE_block\(blockNumber)_\(timestamp).bin")
-    FileManager.default.createFile(atPath: path2.path, contents: Data(bytes: entropy), attributes: nil)
+    FileManager.default.createFile(atPath: path2.path, contents: Data(entropy), attributes: nil)
     files.append(path2)
 
-    // AirDrop the files
-    let controller  = UIActivityViewController(activityItems: files, applicationActivities: nil)
-    controller.popoverPresentationController?.sourceView = self.view
-    controller.completionWithItemsHandler = doneSharingHandler
-    controller.excludedActivityTypes = [.postToTwitter, .saveToCameraRoll ,.postToFacebook, .postToWeibo, .message, .mail, .print, .copyToPasteboard, .assignToContact, .saveToCameraRoll, .addToReadingList, .postToFlickr, .postToVimeo, .postToTencentWeibo]
-    self.present(controller, animated: true)
+    DispatchQueue.main.async {
+      // AirDrop the files
+      let controller  = UIActivityViewController(activityItems: files, applicationActivities: nil)
+      controller.popoverPresentationController?.sourceView = self.view
+      let viewRect = self.view.bounds
+      let sourceRect = CGRect(x: 0, y: viewRect.height, width: viewRect.width, height: 0)
+      controller.popoverPresentationController?.sourceRect = sourceRect
+      controller.preferredContentSize = CGSize(width: viewRect.width, height: viewRect.height)
+      controller.completionWithItemsHandler = self.doneSharingHandler
+      controller.excludedActivityTypes = [.postToTwitter, .saveToCameraRoll ,.postToFacebook, .postToWeibo, .message, .mail, .print, .copyToPasteboard, .assignToContact, .saveToCameraRoll, .addToReadingList, .postToFlickr, .postToVimeo, .postToTencentWeibo]
+      self.present(controller, animated: true)
+    }
   }
 
-  func doneSharingHandler(activityType: UIActivityType?, shared: Bool, items: [Any]?, error: Error?) {
+  func doneSharingHandler(activityType: UIActivity.ActivityType?, shared: Bool, items: [Any]?, error: Error?) {
     if !defaults.bool(forKey: "block_amount_unlimited") && (self.blockNumber == defaults.integer(forKey: "block_amount")) {
       self.closeView()
     } else {
@@ -223,7 +229,7 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
   }
 
   func progressPath(_ percentage: CGFloat) -> CGPath {
-    return UIBezierPath(arcCenter: CGPoint(x: 10 + self.cameraRadius, y: self.cameraCenterY + self.cameraRadius),
+    return UIBezierPath(arcCenter: CGPoint(x: 10 + self.cameraRadius, y: self.cameraTopY + self.cameraRadius),
                         radius: self.cameraRadius - 2, startAngle: -CGFloat.pi / 2.0,
                         endAngle: -CGFloat.pi / 2.0 + (CGFloat.pi * 2.0 * percentage), clockwise: true).cgPath
   }
@@ -258,7 +264,9 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
   }
 
   func closeView() {
-    self.performSegue(withIdentifier: "backToSettings", sender: self)
-    self.dismiss(animated: false, completion: nil)
+    DispatchQueue.main.async {
+      self.performSegue(withIdentifier: "backToSettings", sender: self)
+      self.dismiss(animated: false, completion: nil)
+    }
   }
 }

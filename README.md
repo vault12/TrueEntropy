@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Swift-4.0-blue.svg" />
+    <img src="https://img.shields.io/badge/Swift-5.0-blue.svg" />
     <a href="https://itunes.apple.com/us/app/trueentropy/id1299321174">
         <img src="https://img.shields.io/itunes/v/1299321174.svg" alt="Download on the App Store" />
     </a>
@@ -42,11 +42,11 @@ Read [full research notes](https://medium.com/vault12/how-to-get-true-randomness
 * Option to generate CSV file for manual testing
 
 ## Requirements
-iOS 9.3 and Swift 4.0 are required.
+iOS 12.0 and Swift 5.0 are required.
 
 ## Installation
 
-App depencies have to be install using [CocoaPods](http://cocoapods.org), which is a dependency manager for Cocoa projects. To install it, run:
+App depencies have to be installed using [CocoaPods](http://cocoapods.org), which is a dependency manager for Cocoa projects. To install it, run:
 
 ```bash
 $ gem install cocoapods
@@ -68,7 +68,7 @@ You can edit particular predefined constants (like *camera resolution*, *range o
 We encourage you to contribute to TrueEntropy using [pull requests](https://github.com/vault12/TrueEntropy/pulls).
 
 ## Slack Community
-We've set up a public slack community [Vault12 Dwellers](https://vault12dwellers.slack.com/). Request an invite by clicking [here](https://slack.vault12.com/).
+We've set up a public slack community [Vault12 Dwellers](https://vault12dwellers.slack.com/). Request an invite [here](https://t.me/Vault12).
 
 ## License
 TrueEntropy is released under the [MIT License](http://opensource.org/licenses/MIT).

@@ -8,7 +8,7 @@
 
 import Foundation
 import Sodium
-import libsodium
+import Clibsodium
 
 class Utils {
   static let HASH_BLOCK:Int = 64
