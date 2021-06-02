@@ -226,6 +226,7 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
                                         handler: { (action) in
                                           guard let settingsURL = NSURL(string: UIApplication.openSettingsURLString) as URL? else { return }
                                           UIApplication.shared.openURL(settingsURL)
+                                          // TODO: 'openURL' was deprecated in iOS 10.0
                                           self.hideOverlay()
                                         }
           ))

@@ -68,7 +68,7 @@ class CameraFrames : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         session.sessionPreset = Constants.cameraPreset
       } else {
         // Otherwise we will downgrade to low memory footprint resolution
-        session.sessionPreset = .hd1280x720
+        session.sessionPreset = .hd1920x1080
       }
 
       session.commitConfiguration()

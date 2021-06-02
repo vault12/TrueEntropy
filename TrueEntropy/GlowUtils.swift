@@ -35,6 +35,7 @@ class Utils {
   func randBuf(_ n:Int = HASH_LEN) -> [UInt8] {
     var res = [UInt8](repeating:0, count: n)
     arc4random_buf(UnsafeMutableRawPointer(&res),n)
+    // TODO: Initialization of 'UnsafeMutableRawPointer' results in a dangling pointer
     return res
   }
 

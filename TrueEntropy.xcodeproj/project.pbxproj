@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A1281EE7AFB5A19BFC9034F /* Pods_TrueEntropy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F567D41C9ED2B6239F0A2BD /* Pods_TrueEntropy.framework */; };
 		A535B07E1F789716002F15A5 /* VonNeumannEnc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535B07D1F789716002F15A5 /* VonNeumannEnc.swift */; };
 		A540BC551C8AB44B000D62EC /* CameraFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A540BC541C8AB44B000D62EC /* CameraFrames.swift */; };
 		A549EE931F94523C00E031B4 /* BuildPi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549EE921F94523C00E031B4 /* BuildPi.swift */; };
@@ -26,7 +25,8 @@
 		A5CBBF2A1C8A83FC00693175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CBBF291C8A83FC00693175 /* Assets.xcassets */; };
 		A5CBBF2D1C8A83FC00693175 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CBBF2B1C8A83FC00693175 /* LaunchScreen.storyboard */; };
 		A5EDFE171F861F01003ECDED /* Extractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EDFE161F861F01003ECDED /* Extractor.swift */; };
-		FA1B76001F7D7FA2008CA324 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		A5F2C98226670EB100DB412F /* GF8.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2C98126670EB100DB412F /* GF8.swift */; };
+		FA1B76001F7D7FA2008CA324 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		FA30234B1F97813800EEFB63 /* AdvancedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30234A1F97813800EEFB63 /* AdvancedController.swift */; };
 		FA418FCE1F97EC6D005305F0 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA418FCD1F97EC6D005305F0 /* bg.jpg */; };
 		FA46270E1F84DD3500EE3A3F /* scale.png in Resources */ = {isa = PBXBuildFile; fileRef = FA46270D1F84DD3500EE3A3F /* scale.png */; };
@@ -44,8 +44,24 @@
 		FAED52311F965E4C0087DC3C /* camera_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAED52301F965E490087DC3C /* camera_bg.jpg */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A54A38482664AC6600C55CD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A54A38432664AC6600C55CD8 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FFF8E85573FD008E13961ED82646B812;
+			remoteInfo = "Pods-TrueEntropy";
+		};
+		A54A384A2664AC6600C55CD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A54A38432664AC6600C55CD8 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 32497A3ACEA14D32D7F8C65D5357128A;
+			remoteInfo = Sodium;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		2F567D41C9ED2B6239F0A2BD /* Pods_TrueEntropy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrueEntropy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4302596092EFE9E0F7A1B5A3 /* Pods-TrueEntropy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueEntropy.debug.xcconfig"; path = "Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy.debug.xcconfig"; sourceTree = "<group>"; };
 		4965A889729046C1D7A149FA /* Pods-TrueEntropy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueEntropy.release.xcconfig"; path = "Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy.release.xcconfig"; sourceTree = "<group>"; };
 		64D4711A2612124D0059E5AE /* Clibsodium.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Clibsodium.xcframework; path = Pods/Sodium/Clibsodium.xcframework; sourceTree = "<group>"; };
@@ -56,6 +72,7 @@
 		A540BC4E1C8AB1F3000D62EC /* TrueEntropy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrueEntropy-Bridging-Header.h"; sourceTree = "<group>"; };
 		A540BC541C8AB44B000D62EC /* CameraFrames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraFrames.swift; sourceTree = "<group>"; };
 		A549EE921F94523C00E031B4 /* BuildPi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildPi.swift; sourceTree = "<group>"; };
+		A54A38432664AC6600C55CD8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		A54CF55F1F93292500F4B61D /* OneBitExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneBitExtractor.swift; sourceTree = "<group>"; };
 		A57CA8311FD25D3000D1AA8D /* GlowUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowUtils.swift; sourceTree = "<group>"; };
 		A58014721F6E518A0062FB0C /* Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
@@ -71,6 +88,7 @@
 		A5CBBF2C1C8A83FC00693175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5CBBF2E1C8A83FC00693175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5EDFE161F861F01003ECDED /* Extractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extractor.swift; sourceTree = "<group>"; };
+		A5F2C98126670EB100DB412F /* GF8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GF8.swift; sourceTree = "<group>"; };
 		FA30234A1F97813800EEFB63 /* AdvancedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedController.swift; sourceTree = "<group>"; };
 		FA418FCD1F97EC6D005305F0 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		FA46270D1F84DD3500EE3A3F /* scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scale.png; sourceTree = "<group>"; };
@@ -95,7 +113,6 @@
 			files = (
 				A58014751F6E5C790062FB0C /* CoreVideo.framework in Frameworks */,
 				A58014741F6E5C710062FB0C /* AVFoundation.framework in Frameworks */,
-				2A1281EE7AFB5A19BFC9034F /* Pods_TrueEntropy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,11 +128,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A54A38442664AC6600C55CD8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A54A38492664AC6600C55CD8 /* Pods_TrueEntropy.framework */,
+				A54A384B2664AC6600C55CD8 /* Sodium.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A5AB7D3A1F9740A500D45222 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				64D4711A2612124D0059E5AE /* Clibsodium.xcframework */,
-				2F567D41C9ED2B6239F0A2BD /* Pods_TrueEntropy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,6 +148,7 @@
 		A5CBBF131C8A83FC00693175 = {
 			isa = PBXGroup;
 			children = (
+				A54A38432664AC6600C55CD8 /* Pods.xcodeproj */,
 				A540BC4A1C8AAE60000D62EC /* CoreVideo.framework */,
 				A540BC481C8AAE57000D62EC /* CoreMedia.framework */,
 				A540BC461C8AAE43000D62EC /* AVFoundation.framework */,
@@ -166,6 +192,7 @@
 				A5CBBF2E1C8A83FC00693175 /* Info.plist */,
 				A5CBBF291C8A83FC00693175 /* Assets.xcassets */,
 				A5CBBF261C8A83FC00693175 /* TrueEntropy.xcdatamodeld */,
+				A5F2C98126670EB100DB412F /* GF8.swift */,
 			);
 			path = TrueEntropy;
 			sourceTree = "<group>";
@@ -229,22 +256,44 @@
 			};
 			buildConfigurationList = A5CBBF171C8A83FC00693175 /* Build configuration list for PBXProject "TrueEntropy" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
 			mainGroup = A5CBBF131C8A83FC00693175;
 			productRefGroup = A5CBBF1D1C8A83FC00693175 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A54A38442664AC6600C55CD8 /* Products */;
+					ProjectRef = A54A38432664AC6600C55CD8 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A5CBBF1B1C8A83FC00693175 /* TrueEntropy */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A54A38492664AC6600C55CD8 /* Pods_TrueEntropy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_TrueEntropy.framework;
+			remoteRef = A54A38482664AC6600C55CD8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A54A384B2664AC6600C55CD8 /* Sodium.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sodium.framework;
+			remoteRef = A54A384A2664AC6600C55CD8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A5CBBF1A1C8A83FC00693175 /* Resources */ = {
@@ -301,7 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA1B76001F7D7FA2008CA324 /* BuildFile in Sources */,
+				FA1B76001F7D7FA2008CA324 /* (null) in Sources */,
 				A54CF5601F93292500F4B61D /* OneBitExtractor.swift in Sources */,
 				A5EDFE171F861F01003ECDED /* Extractor.swift in Sources */,
 				FA30234B1F97813800EEFB63 /* AdvancedController.swift in Sources */,
@@ -316,6 +365,7 @@
 				A57CA8321FD25D3000D1AA8D /* GlowUtils.swift in Sources */,
 				A5CBBF221C8A83FC00693175 /* GenerationController.swift in Sources */,
 				A5CBBF281C8A83FC00693175 /* TrueEntropy.xcdatamodeld in Sources */,
+				A5F2C98226670EB100DB412F /* GF8.swift in Sources */,
 				A5CBBF201C8A83FC00693175 /* AppDelegate.swift in Sources */,
 				A58014731F6E518A0062FB0C /* Frame.swift in Sources */,
 			);

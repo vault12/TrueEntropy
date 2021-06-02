@@ -58,6 +58,7 @@ class GenerationController: UIViewController, CameraFramesDelegate, UITableViewD
   private func addCameraLayer() {
     let cameraFrame = CGRect(x: 10, y: cameraTopY,  width: cameraRadius * 2, height: cameraRadius * 2)
 
+    // TODO: 'devices(for:)' was deprecated in iOS 10.0: Use AVCaptureDeviceDiscoverySession instead.
     if (AVCaptureDevice.devices(for: AVMediaType.video).count > 0) {
       // Show camera layer
       frames = CameraFrames(dlg:self)
