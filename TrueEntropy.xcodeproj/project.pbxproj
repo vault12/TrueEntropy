@@ -26,6 +26,7 @@
 		A5CBBF2D1C8A83FC00693175 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CBBF2B1C8A83FC00693175 /* LaunchScreen.storyboard */; };
 		A5EDFE171F861F01003ECDED /* Extractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EDFE161F861F01003ECDED /* Extractor.swift */; };
 		A5F2C98226670EB100DB412F /* GF8.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2C98126670EB100DB412F /* GF8.swift */; };
+		A5F2C98C2667273B00DB412F /* TrueEntropyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2C98B2667273B00DB412F /* TrueEntropyTests.swift */; };
 		FA1B76001F7D7FA2008CA324 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		FA30234B1F97813800EEFB63 /* AdvancedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30234A1F97813800EEFB63 /* AdvancedController.swift */; };
 		FA418FCE1F97EC6D005305F0 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA418FCD1F97EC6D005305F0 /* bg.jpg */; };
@@ -59,6 +60,13 @@
 			remoteGlobalIDString = 32497A3ACEA14D32D7F8C65D5357128A;
 			remoteInfo = Sodium;
 		};
+		A5F2C98E2667273B00DB412F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5CBBF141C8A83FC00693175 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5CBBF1B1C8A83FC00693175;
+			remoteInfo = TrueEntropy;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +97,9 @@
 		A5CBBF2E1C8A83FC00693175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5EDFE161F861F01003ECDED /* Extractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extractor.swift; sourceTree = "<group>"; };
 		A5F2C98126670EB100DB412F /* GF8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GF8.swift; sourceTree = "<group>"; };
+		A5F2C9892667273B00DB412F /* TrueEntropyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrueEntropyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5F2C98B2667273B00DB412F /* TrueEntropyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueEntropyTests.swift; sourceTree = "<group>"; };
+		A5F2C98D2667273B00DB412F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA30234A1F97813800EEFB63 /* AdvancedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedController.swift; sourceTree = "<group>"; };
 		FA418FCD1F97EC6D005305F0 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		FA46270D1F84DD3500EE3A3F /* scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scale.png; sourceTree = "<group>"; };
@@ -113,6 +124,13 @@
 			files = (
 				A58014751F6E5C790062FB0C /* CoreVideo.framework in Frameworks */,
 				A58014741F6E5C710062FB0C /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5F2C9862667273B00DB412F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +171,7 @@
 				A540BC481C8AAE57000D62EC /* CoreMedia.framework */,
 				A540BC461C8AAE43000D62EC /* AVFoundation.framework */,
 				A5CBBF1E1C8A83FC00693175 /* TrueEntropy */,
+				A5F2C98A2667273B00DB412F /* TrueEntropyTests */,
 				A5CBBF1D1C8A83FC00693175 /* Products */,
 				A5AB7D3A1F9740A500D45222 /* Frameworks */,
 				A540BC4E1C8AB1F3000D62EC /* TrueEntropy-Bridging-Header.h */,
@@ -164,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				A5CBBF1C1C8A83FC00693175 /* TrueEntropy.app */,
+				A5F2C9892667273B00DB412F /* TrueEntropyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,6 +215,15 @@
 				A5F2C98126670EB100DB412F /* GF8.swift */,
 			);
 			path = TrueEntropy;
+			sourceTree = "<group>";
+		};
+		A5F2C98A2667273B00DB412F /* TrueEntropyTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2C98B2667273B00DB412F /* TrueEntropyTests.swift */,
+				A5F2C98D2667273B00DB412F /* Info.plist */,
+			);
+			path = TrueEntropyTests;
 			sourceTree = "<group>";
 		};
 		FA0B4C881F90FC8E008575DC /* Resources */ = {
@@ -237,13 +266,31 @@
 			productReference = A5CBBF1C1C8A83FC00693175 /* TrueEntropy.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A5F2C9882667273B00DB412F /* TrueEntropyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5F2C9902667273B00DB412F /* Build configuration list for PBXNativeTarget "TrueEntropyTests" */;
+			buildPhases = (
+				A5F2C9852667273B00DB412F /* Sources */,
+				A5F2C9862667273B00DB412F /* Frameworks */,
+				A5F2C9872667273B00DB412F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5F2C98F2667273B00DB412F /* PBXTargetDependency */,
+			);
+			name = TrueEntropyTests;
+			productName = TrueEntropyTests;
+			productReference = A5F2C9892667273B00DB412F /* TrueEntropyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A5CBBF141C8A83FC00693175 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Vault12;
 				TargetAttributes = {
@@ -251,6 +298,12 @@
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = W88ZRBQD5Y;
 						LastSwiftMigration = 1240;
+					};
+					A5F2C9882667273B00DB412F = {
+						CreatedOnToolsVersion = 12.5;
+						DevelopmentTeam = W88ZRBQD5Y;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A5CBBF1B1C8A83FC00693175;
 					};
 				};
 			};
@@ -274,6 +327,7 @@
 			projectRoot = "";
 			targets = (
 				A5CBBF1B1C8A83FC00693175 /* TrueEntropy */,
+				A5F2C9882667273B00DB412F /* TrueEntropyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -315,6 +369,13 @@
 				FAA31D551F94AECE007DACF0 /* splash.png in Resources */,
 				FA418FCE1F97EC6D005305F0 /* bg.jpg in Resources */,
 				A5CBBF251C8A83FC00693175 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5F2C9872667273B00DB412F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +432,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5F2C9852667273B00DB412F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5F2C98C2667273B00DB412F /* TrueEntropyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A5F2C98F2667273B00DB412F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5CBBF1B1C8A83FC00693175 /* TrueEntropy */;
+			targetProxy = A5F2C98E2667273B00DB412F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A5CBBF231C8A83FC00693175 /* Main.storyboard */ = {
@@ -556,6 +633,58 @@
 			};
 			name = Release;
 		};
+		A5F2C9912667273B00DB412F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W88ZRBQD5Y;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = TrueEntropyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vault12.shamir.TrueEntropyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrueEntropy.app/TrueEntropy";
+			};
+			name = Debug;
+		};
+		A5F2C9922667273B00DB412F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W88ZRBQD5Y;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = TrueEntropyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vault12.shamir.TrueEntropyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrueEntropy.app/TrueEntropy";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -573,6 +702,15 @@
 			buildConfigurations = (
 				A5CBBF321C8A83FC00693175 /* Debug */,
 				A5CBBF331C8A83FC00693175 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5F2C9902667273B00DB412F /* Build configuration list for PBXNativeTarget "TrueEntropyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5F2C9912667273B00DB412F /* Debug */,
+				A5F2C9922667273B00DB412F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
