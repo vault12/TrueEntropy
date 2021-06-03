@@ -13,6 +13,9 @@ protocol ExtractAlgorithm {
 
   // Minimal number of sample algorith needs to process as batch
   var   minimalSamples:Int { get }
+  
+  // Minimal number of individual data values algorith needs to process as batch
+  var   minimalData:Int { get }
 }
 
 // Extractor manages the conversion of raw sample values into uniform entropy bit
@@ -32,12 +35,15 @@ class Extractor {
 
   private init() {
     self.result = [UInt8](repeating:0, count: Constants.extractorCapacity)
-    self.algorithm = VonNeumannEncoder(max_bits: UserDefaults.standard.integer(forKey: "speed"))
+//    self.algorithm = VonNeumannEncoder(max_bits: UserDefaults.standard.integer(forKey: "speed"))
+    self.algorithm = ABCExtractor(recursion: 5)
     self.setChiSquareLimit()
   }
 
-  func setMaxBits(_ mBits:Int = UserDefaults.standard.integer(forKey: "speed")) {
-    self.algorithm = VonNeumannEncoder(max_bits: mBits)
+  func setMaxBits(_ setting:Int = UserDefaults.standard.integer(forKey: "speed")) {
+    // self.algorithm = VonNeumannEncoder(max_bits: setting)
+    self.algorithm = ABCExtractor(recursion: UInt8(setting + 2))
+    // settings 1, 2 and 3 produce 3, 4 and 5 levels of recursion
   }
 
   func setChiSquareLimit() {

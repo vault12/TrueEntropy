@@ -29,9 +29,9 @@ class SettingsController: UIViewController, UITextFieldDelegate, UITextViewDeleg
   var buttons2: Array<UIButton> = []
 
   var speedLabels = [
-    1: "1 bit per pixel, low bandwidth and reliable even with poor camera view.",
-    2: "2 bits per pixel, balanced.",
-    3: "3 bits per pixel. High bandwidth generation, must have calibrated camera view. High risk of biased output in bad conditions!"
+    1: "3 recursions: very fast generation",
+    2: "4 recursions: default",
+    3: "5 recursions: slow but extremely high quality"
   ]
 
   override func viewDidLoad() {

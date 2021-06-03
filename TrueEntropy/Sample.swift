@@ -36,9 +36,13 @@ class Sample {
       self.min_entropy = -log2( Double(hist[Int(UInt8.max)]) / Double(self.count) )
     }
 
+    // CHOICE: Since 0 values provide least entropy and most of the camera
+    // errors we going to just ignore all natural zero differences. That will save
+    // time scanning each sample of unnatural 0-sequences.
+    
     // Remove non-noise 0 values from oversatured areas which produce inprobably
     // long sequences of zero values.
-    self.remove_zero_lines()
+    // self.remove_zero_lines()
   }
 
   var no_stats:Bool {
@@ -114,7 +118,7 @@ class Sample {
   // If two frames have the same over-bright area, it will convert to a long line
   // of zeros in tye difference sample: when the camera's brightness is maxed out,
   // there is not enough itensity value for the noise to register: 255-255 = 0.
-  func remove_zero_lines(max_zeroes:Int = 7)  {
+  func remove_zero_lines(max_zeroes:Int = 5)  {
     var toRemove:[(Int,Int)] = []
     var ( range_start, range_count ) = (Int(0), Int(0))
     // Record zero sequences to be removed

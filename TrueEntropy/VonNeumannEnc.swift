@@ -25,7 +25,9 @@ class VonNeumannEncoder: ExtractAlgorithm {
   var min:Int       { get { return -self.range/2 } }
   var max:Int       { get { return self.range/2 } }
   var max_bytes:Int { get { return VonNeumannEncoder.byteDepthPerBits[self.max_bits] }}
+  
   var minimalSamples:Int { get { return self.max_bytes }}
+  var minimalData:Int    { get { return self.max_bytes }}
 
   // For longer input byte sequences extractor consumes, we will need
   // a larger and larger lookup table. This table converts the given bit length

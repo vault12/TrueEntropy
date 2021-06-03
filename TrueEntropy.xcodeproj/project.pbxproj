@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A535B07E1F789716002F15A5 /* VonNeumannEnc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535B07D1F789716002F15A5 /* VonNeumannEnc.swift */; };
+		A53A32CB26685A9E00FF9AA4 /* ABCExctractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A32CA26685A9E00FF9AA4 /* ABCExctractor.swift */; };
 		A540BC551C8AB44B000D62EC /* CameraFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A540BC541C8AB44B000D62EC /* CameraFrames.swift */; };
 		A549EE931F94523C00E031B4 /* BuildPi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549EE921F94523C00E031B4 /* BuildPi.swift */; };
 		A54CF5601F93292500F4B61D /* OneBitExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CF55F1F93292500F4B61D /* OneBitExtractor.swift */; };
@@ -74,6 +75,7 @@
 		4965A889729046C1D7A149FA /* Pods-TrueEntropy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueEntropy.release.xcconfig"; path = "Target Support Files/Pods-TrueEntropy/Pods-TrueEntropy.release.xcconfig"; sourceTree = "<group>"; };
 		64D4711A2612124D0059E5AE /* Clibsodium.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Clibsodium.xcframework; path = Pods/Sodium/Clibsodium.xcframework; sourceTree = "<group>"; };
 		A535B07D1F789716002F15A5 /* VonNeumannEnc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VonNeumannEnc.swift; sourceTree = "<group>"; };
+		A53A32CA26685A9E00FF9AA4 /* ABCExctractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABCExctractor.swift; sourceTree = "<group>"; };
 		A540BC461C8AAE43000D62EC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A540BC481C8AAE57000D62EC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A540BC4A1C8AAE60000D62EC /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -213,6 +215,7 @@
 				A5CBBF291C8A83FC00693175 /* Assets.xcassets */,
 				A5CBBF261C8A83FC00693175 /* TrueEntropy.xcdatamodeld */,
 				A5F2C98126670EB100DB412F /* GF8.swift */,
+				A53A32CA26685A9E00FF9AA4 /* ABCExctractor.swift */,
 			);
 			path = TrueEntropy;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				A5CBBF281C8A83FC00693175 /* TrueEntropy.xcdatamodeld in Sources */,
 				A5F2C98226670EB100DB412F /* GF8.swift in Sources */,
 				A5CBBF201C8A83FC00693175 /* AppDelegate.swift in Sources */,
+				A53A32CB26685A9E00FF9AA4 /* ABCExctractor.swift in Sources */,
 				A58014731F6E518A0062FB0C /* Frame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,7 +651,7 @@
 				DEVELOPMENT_TEAM = W88ZRBQD5Y;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = TrueEntropyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -674,7 +678,7 @@
 				DEVELOPMENT_TEAM = W88ZRBQD5Y;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = TrueEntropyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vault12.shamir.TrueEntropyTests;

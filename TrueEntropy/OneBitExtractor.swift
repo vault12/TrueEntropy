@@ -28,6 +28,7 @@ class OneBitExtractor: ExtractAlgorithm {
 
 // DO NOT USE IN PRODUCTION!
   var   minimalSamples:Int { get { return self.max_samples } }
+  var   minimalData:Int { get { return self.max_samples } }
 
 // DO NOT USE IN PRODUCTION!
   func  encode(samples:[Int]) -> (newBits:UInt32, size:Int) {
