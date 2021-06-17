@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4586CD5F4FCAE5A44496C83B /* Pods_TrueEntropy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DB0893C040843800683DDC /* Pods_TrueEntropy.framework */; };
 		A535B07E1F789716002F15A5 /* VonNeumannEnc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535B07D1F789716002F15A5 /* VonNeumannEnc.swift */; };
 		A53A32CB26685A9E00FF9AA4 /* ABCExctractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A32CA26685A9E00FF9AA4 /* ABCExctractor.swift */; };
 		A540BC551C8AB44B000D62EC /* CameraFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A540BC541C8AB44B000D62EC /* CameraFrames.swift */; };
@@ -28,7 +29,7 @@
 		A5EDFE171F861F01003ECDED /* Extractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EDFE161F861F01003ECDED /* Extractor.swift */; };
 		A5F2C98226670EB100DB412F /* GF8.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2C98126670EB100DB412F /* GF8.swift */; };
 		A5F2C98C2667273B00DB412F /* TrueEntropyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2C98B2667273B00DB412F /* TrueEntropyTests.swift */; };
-		FA1B76001F7D7FA2008CA324 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		FA1B76001F7D7FA2008CA324 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		FA30234B1F97813800EEFB63 /* AdvancedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30234A1F97813800EEFB63 /* AdvancedController.swift */; };
 		FA418FCE1F97EC6D005305F0 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA418FCD1F97EC6D005305F0 /* bg.jpg */; };
 		FA46270E1F84DD3500EE3A3F /* scale.png in Resources */ = {isa = PBXBuildFile; fileRef = FA46270D1F84DD3500EE3A3F /* scale.png */; };
@@ -102,6 +103,7 @@
 		A5F2C9892667273B00DB412F /* TrueEntropyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrueEntropyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F2C98B2667273B00DB412F /* TrueEntropyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueEntropyTests.swift; sourceTree = "<group>"; };
 		A5F2C98D2667273B00DB412F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3DB0893C040843800683DDC /* Pods_TrueEntropy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrueEntropy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA30234A1F97813800EEFB63 /* AdvancedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedController.swift; sourceTree = "<group>"; };
 		FA418FCD1F97EC6D005305F0 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		FA46270D1F84DD3500EE3A3F /* scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scale.png; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			files = (
 				A58014751F6E5C790062FB0C /* CoreVideo.framework in Frameworks */,
 				A58014741F6E5C710062FB0C /* AVFoundation.framework in Frameworks */,
+				4586CD5F4FCAE5A44496C83B /* Pods_TrueEntropy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				64D4711A2612124D0059E5AE /* Clibsodium.xcframework */,
+				C3DB0893C040843800683DDC /* Pods_TrueEntropy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -414,7 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA1B76001F7D7FA2008CA324 /* (null) in Sources */,
+				FA1B76001F7D7FA2008CA324 /* BuildFile in Sources */,
 				A54CF5601F93292500F4B61D /* OneBitExtractor.swift in Sources */,
 				A5EDFE171F861F01003ECDED /* Extractor.swift in Sources */,
 				FA30234B1F97813800EEFB63 /* AdvancedController.swift in Sources */,
